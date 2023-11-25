@@ -32,6 +32,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/代码练习/blazor-2023-11-25/BlazorApp/Pages/QueryEmp.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUXVlcnlFbXAucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/代码练习/blazor-2023-11-25/BlazorApp/Pages/RegisterEmp.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXJFbXAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

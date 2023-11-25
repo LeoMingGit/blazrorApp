@@ -2,6 +2,7 @@
 @using System.ComponentModel.DataAnnotations;
 @using System.Text.Json;
 @using BlazorApp.Data;
+@using Utilities;
 @inject IMessageService _message
 <Form @ref="form"
       Model="@model"
@@ -33,11 +34,12 @@
         </GridCol>
     </GridRow>
 </Form>
-<RegisterEmpTable skillList="model.EmployeeSkills" ></RegisterEmpTable>
+<RegisterEmpTable @ref="myComponent" skillList="model.EmployeeSkills"></RegisterEmpTable>
  
 
 @code
 {
+    RegisterEmpTable myComponent;
 
     private EmployeeRegistrationView model = new EmployeeRegistrationView();
 
@@ -54,13 +56,19 @@
     }
     private async void OnFinish(EditContext editContext)
     {
-        saveData = editContext.Model as EmployeeRegistrationView;
-        saveData.EmployeeSkills = saveData.EmployeeSkills.Where(x => x.SelectedSkill == true).ToList();
-        if (saveData.EmployeeSkills.Where(x => x.SelectedSkill == true).ToList().Count() == 0)
+        var selectedData = myComponent.selectedRows?.ToList();
+
+        if (selectedData==null || selectedData.Count() == 0)
         {
             await _message.Warning("Please Select Verified Skills");
             return;
         }
+        var tempData = editContext.Model as EmployeeRegistrationView;
+        saveData = CommonHelper.DeepCopy<EmployeeRegistrationView>(tempData);
+        var tmepSelectedData = CommonHelper.DeepCopy<List<EmployeeSkillView>>(tempData.EmployeeSkills);
+        saveData.EmployeeSkills = tmepSelectedData;
+
+ 
         Console.WriteLine($"Success:{JsonSerializer.Serialize(model)}");
     }
 

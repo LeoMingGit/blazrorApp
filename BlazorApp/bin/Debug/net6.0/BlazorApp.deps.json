@@ -9,7 +9,8 @@
       "BlazorApp/1.0.0": {
         "dependencies": {
           "AntDesign": "0.16.2",
-          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.17.2"
+          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.17.2",
+          "Utilities": "1.0.0"
         },
         "runtime": {
           "BlazorApp.dll": {}
@@ -767,6 +768,11 @@
           "System.Threading": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0"
         }
+      },
+      "Utilities/1.0.0": {
+        "runtime": {
+          "Utilities.dll": {}
+        }
       }
     }
   },
@@ -1412,6 +1418,11 @@
       "sha512": "sha512-5zJ0XDxAIg8iy+t4aMnQAu0MqVbqyvfoUVl1yDV61xdo3Vth45oA2FoY4pPkxYAH5f8ixpmTqXeEIya95x0aCQ==",
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
+    },
+    "Utilities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

@@ -70,3 +70,5 @@ E:\代码练习\blazor-2023-11-25\BlazorApp\obj\Debug\net6.0\refint\BlazorApp.dl
 E:\代码练习\blazor-2023-11-25\BlazorApp\obj\Debug\net6.0\BlazorApp.pdb
 E:\代码练习\blazor-2023-11-25\BlazorApp\obj\Debug\net6.0\BlazorApp.genruntimeconfig.cache
 E:\代码练习\blazor-2023-11-25\BlazorApp\obj\Debug\net6.0\ref\BlazorApp.dll
+E:\代码练习\blazor-2023-11-25\BlazorApp\bin\Debug\net6.0\Utilities.dll
+E:\代码练习\blazor-2023-11-25\BlazorApp\bin\Debug\net6.0\Utilities.pdb

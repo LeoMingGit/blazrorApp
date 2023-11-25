@@ -1565,6 +1565,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Utilities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utilities.dll": {}
+        }
       }
     }
   },
@@ -5653,12 +5663,18 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "Utilities/1.0.0": {
+      "type": "project",
+      "path": "../Utilities/Utilities.csproj",
+      "msbuildProject": "../Utilities/Utilities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "AntDesign >= 0.16.2",
-      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.17.2"
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.17.2",
+      "Utilities >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5687,7 +5703,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\代码练习\\blazor-2023-11-25\\Utilities\\Utilities.csproj": {
+              "projectPath": "E:\\代码练习\\blazor-2023-11-25\\Utilities\\Utilities.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
