@@ -1,0 +1,73 @@
+﻿@page "/queryEmp"
+@using System.ComponentModel.DataAnnotations;
+@using System.Text.Json;
+@using BlazorApp.Data;
+@using Services.Dto;
+@using Services.Vo;
+@using Services.BLL;
+@using Utilities;
+@inject IMessageService _message
+@inject IServiceProvider ServiceProvider
+<Form @ref="form"
+      Model="@model"
+      OnFinish="OnFinish"
+      OnFinishFailed="OnFinishFailed"
+      LabelColSpan="8"
+      WrapperColSpan="16">
+    <GridRow>
+        <GridCol Span="12">
+            <FormItem Label="Home Phone">
+                <Input @bind-Value="@context.HomePhone" />
+            </FormItem>
+        </GridCol>
+        <GridCol Span="12">
+            <FormItem WrapperColOffset="4" WrapperColSpan="16">
+                <Button Type="@ButtonType.Primary" HtmlType="submit">
+                    Query
+                </Button>
+                <Button OnClick="Reset">
+                    Clear
+                </Button>
+            </FormItem>
+        </GridCol>
+    </GridRow>
+</Form>
+<QueryEmpTable skillList="list" ></QueryEmpTable>
+
+
+@code
+{
+
+    private QueryEmployeeDto model = new QueryEmployeeDto();
+
+    private Form<QueryEmployeeDto> form;
+
+    private List<QueryEmployeeVo> list = new List<QueryEmployeeVo>();
+
+    private EmployeeRegistrationView saveData = new EmployeeRegistrationView();
+
+    private IEmployeeService employeeService;
+
+    protected override void OnInitialized()
+    {
+        employeeService = ServiceProvider.GetRequiredService<IEmployeeService>();
+    }
+
+    private void Reset(MouseEventArgs args)
+    {
+        form.Reset();
+    }
+    private async void OnFinish(EditContext editContext)
+    {
+
+ 
+        employeeService.sayHello();
+    }
+
+    private void OnFinishFailed(EditContext editContext)
+    {
+        Console.WriteLine($"Failed:{JsonSerializer.Serialize(model)}");
+    }
+
+
+}
