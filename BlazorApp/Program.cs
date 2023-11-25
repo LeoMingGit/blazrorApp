@@ -2,6 +2,7 @@ using BlazorApp.Data;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Services.BLL;
+using Services.Common;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,7 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddAntDesign();
 builder.Services.AddScoped<IEmployeeService, EmployeeServiceImpl>();
+builder.Services.AddSingleton(new AppSettings(builder.Configuration));
 
 
 var app = builder.Build();
