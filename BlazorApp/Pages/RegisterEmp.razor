@@ -32,16 +32,15 @@
         </GridCol>
     </GridRow>
 </Form>
-<RegisterEmpTable></RegisterEmpTable>
+<RegisterEmpTable skillList="model.EmployeeSkills" ></RegisterEmpTable>
 @code
 {
  
-
     private EmployeeRegistrationView model = new EmployeeRegistrationView();
 
 
     private Form<EmployeeRegistrationView>  form;
-
+  
 
     private void Reset(MouseEventArgs args)
     {
@@ -57,5 +56,5 @@
     {
         Console.WriteLine($"Failed:{JsonSerializer.Serialize(model)}");
     }
-
- }
+    
+}
