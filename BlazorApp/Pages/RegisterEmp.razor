@@ -1,7 +1,7 @@
 ﻿@page "/registerEmp"
 @using System.ComponentModel.DataAnnotations;
 @using System.Text.Json;
-
+@using BlazorApp.Data;
 <Form @ref="form"
       Model="@model"
       OnFinish="OnFinish"
@@ -11,13 +11,13 @@
     <GridRow>
         <GridCol Span="12">
             <FormItem Label="First Name">
-                <Input @bind-Value="@context.Note" />
+                <Input @bind-Value="@context.FirstName" />
             </FormItem>
             <FormItem Label="Last Name">
-                <Input @bind-Value="@context.Note" />
+                <Input @bind-Value="@context.LastName" />
             </FormItem>
             <FormItem Label="Home Phone">
-                <Input @bind-Value="@context.Note" />
+                <Input @bind-Value="@context.HomePhone" />
             </FormItem>
         </GridCol>
         <GridCol Span="12">
@@ -31,28 +31,18 @@
             </FormItem>
         </GridCol>
     </GridRow>
-  
-  
-    
 </Form>
-
 <RegisterEmpTable></RegisterEmpTable>
 @code
 {
-    public class Model
-    {
-        [Required]
-        public string Note { get; set; }
-        [Required]
-        public string Gender { get; set; }
-        [Required]
-        public DateTime?[] DateRange { get; set; }
-    }
-
-    private Model model = new Model();
-    private Form<Model> form;
-
  
+
+    private EmployeeRegistrationView model = new EmployeeRegistrationView();
+
+
+    private Form<EmployeeRegistrationView>  form;
+
+
     private void Reset(MouseEventArgs args)
     {
         form.Reset();
@@ -68,21 +58,4 @@
         Console.WriteLine($"Failed:{JsonSerializer.Serialize(model)}");
     }
 
-    private void OnGenderChanged(string gender)
-    {
-        switch (gender)
-        {
-            case "Male":
-                form.Model.Note = "Hello Sir!";
-                break;
-            case "Female":
-                form.Model.Note = "Hello Madam!";
-                break;
-            case "Other":
-                form.Model.Note = "Hello there!";
-                break;
-            default:
-                break;
-        }
-    }
-}
+ }

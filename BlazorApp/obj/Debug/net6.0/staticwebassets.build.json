@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ncsc+S5bUPGcgriNwp5Kx6/Cgf0JyiYQjqY4Yz/RRa0=",
+  "Hash": "QNYlXr0opluTkAoBZbSIHHvDfpx0X8R0YkXZtTdvT5I=",
   "Source": "BlazorApp",
   "BasePath": "_content/BlazorApp",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "BlazorApp\\wwwroot",
       "Source": "BlazorApp",
-      "ContentRoot": "E:\\代码练习\\BlazorApp\\wwwroot\\",
+      "ContentRoot": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\wwwroot\\",
       "BasePath": "_content/BlazorApp",
       "Pattern": "**"
     }
@@ -6273,10 +6273,10 @@
       "OriginalItemSpec": "C:\\Users\\李响\\.nuget\\packages\\antdesign\\0.16.2\\staticwebassets\\less\\upload\\style\\rtl.less"
     },
     {
-      "Identity": "E:\\代码练习\\BlazorApp\\obj\\Debug\\net6.0\\scopedcss\\bundle\\BlazorApp.styles.css",
+      "Identity": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\obj\\Debug\\net6.0\\scopedcss\\bundle\\BlazorApp.styles.css",
       "SourceId": "BlazorApp",
       "SourceType": "Computed",
-      "ContentRoot": "E:\\代码练习\\BlazorApp\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "BlazorApp.styles.css",
       "AssetKind": "All",
@@ -6287,13 +6287,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "E:\\代码练习\\BlazorApp\\obj\\Debug\\net6.0\\scopedcss\\bundle\\BlazorApp.styles.css"
+      "OriginalItemSpec": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\obj\\Debug\\net6.0\\scopedcss\\bundle\\BlazorApp.styles.css"
     },
     {
-      "Identity": "E:\\代码练习\\BlazorApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\BlazorApp.bundle.scp.css",
+      "Identity": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\BlazorApp.bundle.scp.css",
       "SourceId": "BlazorApp",
       "SourceType": "Computed",
-      "ContentRoot": "E:\\代码练习\\BlazorApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "BlazorApp.bundle.scp.css",
       "AssetKind": "All",
@@ -6304,13 +6304,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "E:\\代码练习\\BlazorApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\BlazorApp.bundle.scp.css"
+      "OriginalItemSpec": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\BlazorApp.bundle.scp.css"
     },
     {
-      "Identity": "E:\\代码练习\\BlazorApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Identity": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\代码练习\\BlazorApp\\wwwroot\\",
+      "ContentRoot": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\wwwroot\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "css/bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -6324,10 +6324,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "E:\\代码练习\\BlazorApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\代码练习\\BlazorApp\\wwwroot\\",
+      "ContentRoot": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\wwwroot\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "css/bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -6341,10 +6341,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "E:\\代码练习\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "Identity": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\代码练习\\BlazorApp\\wwwroot\\",
+      "ContentRoot": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\wwwroot\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "css/open-iconic/font/css/open-iconic-bootstrap.min.css",
       "AssetKind": "All",
@@ -6358,10 +6358,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
     },
     {
-      "Identity": "E:\\代码练习\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "Identity": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\代码练习\\BlazorApp\\wwwroot\\",
+      "ContentRoot": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\wwwroot\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.eot",
       "AssetKind": "All",
@@ -6375,10 +6375,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
     },
     {
-      "Identity": "E:\\代码练习\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "Identity": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\代码练习\\BlazorApp\\wwwroot\\",
+      "ContentRoot": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\wwwroot\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.otf",
       "AssetKind": "All",
@@ -6392,10 +6392,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
     },
     {
-      "Identity": "E:\\代码练习\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "Identity": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\代码练习\\BlazorApp\\wwwroot\\",
+      "ContentRoot": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\wwwroot\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.svg",
       "AssetKind": "All",
@@ -6409,10 +6409,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
     },
     {
-      "Identity": "E:\\代码练习\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "Identity": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\代码练习\\BlazorApp\\wwwroot\\",
+      "ContentRoot": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\wwwroot\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.ttf",
       "AssetKind": "All",
@@ -6426,10 +6426,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
     },
     {
-      "Identity": "E:\\代码练习\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "Identity": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\代码练习\\BlazorApp\\wwwroot\\",
+      "ContentRoot": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\wwwroot\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.woff",
       "AssetKind": "All",
@@ -6443,10 +6443,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
-      "Identity": "E:\\代码练习\\BlazorApp\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "Identity": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\代码练习\\BlazorApp\\wwwroot\\",
+      "ContentRoot": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\wwwroot\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "css/open-iconic/FONT-LICENSE",
       "AssetKind": "All",
@@ -6460,10 +6460,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
-      "Identity": "E:\\代码练习\\BlazorApp\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "Identity": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\代码练习\\BlazorApp\\wwwroot\\",
+      "ContentRoot": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\wwwroot\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "css/open-iconic/ICON-LICENSE",
       "AssetKind": "All",
@@ -6477,10 +6477,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\ICON-LICENSE"
     },
     {
-      "Identity": "E:\\代码练习\\BlazorApp\\wwwroot\\css\\open-iconic\\README.md",
+      "Identity": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\wwwroot\\css\\open-iconic\\README.md",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\代码练习\\BlazorApp\\wwwroot\\",
+      "ContentRoot": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\wwwroot\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "css/open-iconic/README.md",
       "AssetKind": "All",
@@ -6494,10 +6494,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\README.md"
     },
     {
-      "Identity": "E:\\代码练习\\BlazorApp\\wwwroot\\css\\site.css",
+      "Identity": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\wwwroot\\css\\site.css",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\代码练习\\BlazorApp\\wwwroot\\",
+      "ContentRoot": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\wwwroot\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -6511,10 +6511,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "E:\\代码练习\\BlazorApp\\wwwroot\\favicon.ico",
+      "Identity": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\wwwroot\\favicon.ico",
       "SourceId": "BlazorApp",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\代码练习\\BlazorApp\\wwwroot\\",
+      "ContentRoot": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\wwwroot\\",
       "BasePath": "_content/BlazorApp",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",

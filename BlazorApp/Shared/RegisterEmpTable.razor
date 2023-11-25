@@ -29,7 +29,7 @@
 </Table>
 
 
-@if (selectedRows != null && selectedRows.Any())
+@*@if (selectedRows != null && selectedRows.Any())
 {
     <Button Danger Size="small" OnClick="@(e => { selectedRows = null; })">Clear</Button>
 
@@ -38,7 +38,7 @@
         <Tag @key="selected.Id" Closable OnClose="e=>RemoveSelection(selected.Id)">@selected.Id - @selected.Summary</Tag>
     }
 }
-
+*@
 
 
 @using System.Text.Json;
@@ -66,18 +66,6 @@
     {
         public int Id { get; set; }
 
-        [DisplayName("Date")]
-        public DateTime? Date { get; set; }
-
-        [DisplayName("Temp. (C)")]
-        public int TemperatureC { get; set; }
-
-        [DisplayName("Summary")]
-        public string Summary { get; set; }
-
-        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-
-        public bool Hot { get; set; }
 
         /// <summary>
         /// 
@@ -104,10 +92,7 @@
 
     }
 
-    private static readonly string[] Summaries = new[]
-    {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-  };
+ 
 
     public async Task OnChange(QueryModel<VerifiedSkills> queryModel)
     {
@@ -124,6 +109,9 @@
                 {
                     Id = index,
                     skill="Temp",
+                    level=1,
+                    yoe=1,
+                    wage=1,
 
                 };
         }).ToList());

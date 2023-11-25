@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\代码练习\\BlazorApp\\BlazorApp.csproj": {}
+    "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\BlazorApp.csproj": {}
   },
   "projects": {
-    "E:\\代码练习\\BlazorApp\\BlazorApp.csproj": {
+    "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\BlazorApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\代码练习\\BlazorApp\\BlazorApp.csproj",
+        "projectUniqueName": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\BlazorApp.csproj",
         "projectName": "BlazorApp",
-        "projectPath": "E:\\代码练习\\BlazorApp\\BlazorApp.csproj",
+        "projectPath": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\BlazorApp.csproj",
         "packagesPath": "C:\\Users\\李响\\.nuget\\packages\\",
-        "outputPath": "E:\\代码练习\\BlazorApp\\obj\\",
+        "outputPath": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\李响\\AppData\\Roaming\\NuGet\\NuGet.Config",

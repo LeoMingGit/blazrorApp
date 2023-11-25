@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "c6nkOPHa7O0GS5c1WV4F/Klfoa6JUiOxEXunq4tkPo/Najmr3dJon6sJOa75I/HDaBfw2+z9Rjy079RcI1NIRg==",
+  "dgSpecHash": "Ebvj311R7jIsvgsA+BPNwchdfPBRpGIfxu+RBculLhVIBgKfxRqjXSHl9ub7odrPj7vF3lvl8VEuIzFN7jaWhw==",
   "success": true,
-  "projectFilePath": "E:\\代码练习\\BlazorApp\\BlazorApp.csproj",
+  "projectFilePath": "E:\\代码练习\\blazor-2023-11-25\\BlazorApp\\BlazorApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\李响\\.nuget\\packages\\antdesign\\0.16.2\\antdesign.0.16.2.nupkg.sha512",
     "C:\\Users\\李响\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.0\\microsoft.aspnetcore.authorization.6.0.0.nupkg.sha512",
