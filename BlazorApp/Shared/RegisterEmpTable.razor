@@ -6,11 +6,11 @@
        DataSource="@pageList"
        Total="@Total"
        PageIndex="@PageIndex"
-       PageSize="@PageSize"
-        OnChange="OnChange"
+       PageSize="@PageSize" @bind-SelectedRows="selectedRows"
+       OnChange="OnChange"
        Size="TableSize.Small"
        RowKey="x=>x.SkillID">
-    <Selection Key="@(context.SkillID.ToString())" />
+    <Selection Key="@(context.SkillID.ToString())"   />
     <PropertyColumn Title="Skill" Property="c=>c.Skill" Width="150" Align="@columnAlign" />
     <PropertyColumn Title="Level" Property="c=>c.Level" Width="350" Align="@columnAlign">
         <RadioGroup @bind-Value="@context.Level">
@@ -26,6 +26,30 @@
         <Input Type="number" Placeholder="0" @bind-Value="@context.HourlyWage" />
     </PropertyColumn>
 </Table>
+<p>PageIndex: @PageIndex | PageSize: @PageSize | Total: @Total</p>
+
+@if (selectedRows != null && selectedRows.Any())
+{
+
+    @foreach (var skillItem in skillList)
+    {
+
+        skillItem.SelectedSkill = false;
+
+    }
+    
+
+    @foreach (var selectedRow in selectedRows)
+    {
+        var targetData = skillList.Where(x => x.SkillID == selectedRow.SkillID).FirstOrDefault();
+        if(targetData!=null)
+        {
+            targetData.SelectedSkill = true;
+        }
+    }
+}
+
+
 @using System.Text.Json;
 @using BlazorApp.Data;
 @code {
@@ -34,7 +58,6 @@
     public List<EmployeeSkillView> skillList { get; set; }
 
     public List<EmployeeSkillView> pageList { get; set; }
-
 
     public int PageIndex { get; set; } = 1;
 
@@ -62,17 +85,17 @@
     }
     private List<EmployeeSkillView>  HandlePageChange(int pageIndex, int pageSize)
     {
-        // Assuming pageIndex starts from 1
         int startIndex = (pageIndex - 1) * pageSize;
-
-        // Ensure startIndex is within the bounds of the skillList
         startIndex = Math.Max(0, Math.Min(startIndex, skillList.Count - 1));
-
-        // Take pageSize items starting from startIndex
-        List<EmployeeSkillView> paginatedList = skillList.Skip(startIndex).Take(pageSize).ToList();
-
+        var paginatedList = skillList.Skip(startIndex).Take(pageSize).ToList();
         return paginatedList;
     }
+
+    private void SelectChange (string id)
+    {
+        
+    }
+
 }
 
 

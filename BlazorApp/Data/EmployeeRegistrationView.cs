@@ -22,13 +22,12 @@ namespace BlazorApp.Data
             {
                 EmployeeSkills.Add(new EmployeeSkillView
                 {
-                    SelectedSkill = i % 2 == 0,   
+                    SelectedSkill = false,
                     SkillID = i,
-                    Skill = $"Skill {i}",
                     Level = i % 3 + 1,  
                     LevelName = $"Level {i}",
                     YearsOfExperience = i % 2 == 0 ? (int?)i : null,   
-                    HourlyWage = 10.5m + i * 2.0m   
+                    HourlyWage = 10.5m + i * 2.0m  
                 });
             }
 

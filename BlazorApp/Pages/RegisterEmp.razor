@@ -2,6 +2,7 @@
 @using System.ComponentModel.DataAnnotations;
 @using System.Text.Json;
 @using BlazorApp.Data;
+@inject IMessageService _message
 <Form @ref="form"
       Model="@model"
       OnFinish="OnFinish"
@@ -33,22 +34,33 @@
     </GridRow>
 </Form>
 <RegisterEmpTable skillList="model.EmployeeSkills" ></RegisterEmpTable>
+ 
+
 @code
 {
- 
+
     private EmployeeRegistrationView model = new EmployeeRegistrationView();
 
 
     private Form<EmployeeRegistrationView>  form;
-  
+
+
+    private EmployeeRegistrationView saveData = new EmployeeRegistrationView();
+
 
     private void Reset(MouseEventArgs args)
     {
         form.Reset();
     }
-
-    private void OnFinish(EditContext editContext)
+    private async void OnFinish(EditContext editContext)
     {
+        saveData = editContext.Model as EmployeeRegistrationView;
+        saveData.EmployeeSkills = saveData.EmployeeSkills.Where(x => x.SelectedSkill == true).ToList();
+        if (saveData.EmployeeSkills.Where(x => x.SelectedSkill == true).ToList().Count() == 0)
+        {
+            await _message.Warning("Please Select Verified Skills");
+            return;
+        }
         Console.WriteLine($"Success:{JsonSerializer.Serialize(model)}");
     }
 
@@ -56,5 +68,6 @@
     {
         Console.WriteLine($"Failed:{JsonSerializer.Serialize(model)}");
     }
+ 
     
 }
