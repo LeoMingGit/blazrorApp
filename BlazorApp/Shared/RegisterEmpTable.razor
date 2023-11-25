@@ -3,7 +3,7 @@
 
 <Table @ref="table"
        TItem="EmployeeSkillView"
-       DataSource="@skillList"
+       DataSource="@pageList"
        Total="@Total"
        PageIndex="@PageIndex"
        PageSize="@PageSize"
@@ -50,16 +50,28 @@
 
     protected override async Task OnInitializedAsync()
     {
-     }
+        pageList = this.HandlePageChange(PageIndex, PageSize);
+        Total = skillList.Count();
+    }
 
     public async Task OnChange(QueryModel<EmployeeSkillView> queryModel)
     {
-        Console.WriteLine(JsonSerializer.Serialize(queryModel));
+        PageIndex = queryModel.PageIndex;
+        PageSize = queryModel.PageSize;
+        pageList = this.HandlePageChange(PageIndex, PageSize);
     }
     private List<EmployeeSkillView>  HandlePageChange(int pageIndex, int pageSize)
     {
+        // Assuming pageIndex starts from 1
+        int startIndex = (pageIndex - 1) * pageSize;
 
-        return skillList;
+        // Ensure startIndex is within the bounds of the skillList
+        startIndex = Math.Max(0, Math.Min(startIndex, skillList.Count - 1));
+
+        // Take pageSize items starting from startIndex
+        List<EmployeeSkillView> paginatedList = skillList.Skip(startIndex).Take(pageSize).ToList();
+
+        return paginatedList;
     }
 }
 
