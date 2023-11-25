@@ -1566,6 +1566,16 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Services.dll": {}
+        }
+      },
       "Utilities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -5664,6 +5674,11 @@
         "system.xml.xdocument.nuspec"
       ]
     },
+    "Services/1.0.0": {
+      "type": "project",
+      "path": "../Services/Services.csproj",
+      "msbuildProject": "../Services/Services.csproj"
+    },
     "Utilities/1.0.0": {
       "type": "project",
       "path": "../Utilities/Utilities.csproj",
@@ -5674,6 +5689,7 @@
     "net6.0": [
       "AntDesign >= 0.16.2",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.17.2",
+      "Services >= 1.0.0",
       "Utilities >= 1.0.0"
     ]
   },
@@ -5704,6 +5720,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "E:\\代码练习\\blazor-2023-11-25\\Services\\Services.csproj": {
+              "projectPath": "E:\\代码练习\\blazor-2023-11-25\\Services\\Services.csproj"
+            },
             "E:\\代码练习\\blazor-2023-11-25\\Utilities\\Utilities.csproj": {
               "projectPath": "E:\\代码练习\\blazor-2023-11-25\\Utilities\\Utilities.csproj"
             }

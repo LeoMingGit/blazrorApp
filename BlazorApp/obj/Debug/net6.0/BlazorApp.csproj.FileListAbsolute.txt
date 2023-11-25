@@ -72,3 +72,5 @@ E:\代码练习\blazor-2023-11-25\BlazorApp\obj\Debug\net6.0\BlazorApp.genruntim
 E:\代码练习\blazor-2023-11-25\BlazorApp\obj\Debug\net6.0\ref\BlazorApp.dll
 E:\代码练习\blazor-2023-11-25\BlazorApp\bin\Debug\net6.0\Utilities.dll
 E:\代码练习\blazor-2023-11-25\BlazorApp\bin\Debug\net6.0\Utilities.pdb
+E:\代码练习\blazor-2023-11-25\BlazorApp\bin\Debug\net6.0\Services.dll
+E:\代码练习\blazor-2023-11-25\BlazorApp\bin\Debug\net6.0\Services.pdb

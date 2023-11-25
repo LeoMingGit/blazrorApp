@@ -1,4 +1,6 @@
-﻿namespace BlazorApp.Data
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BlazorApp.Data
 {
     public class EmployeeSkillView
     {
@@ -7,7 +9,9 @@
         public string Skill { get; set; }
         public int Level { get; set; }
         public string LevelName { get; set; }
+        [Required]
         public int? YearsOfExperience { get; set; }
+        [Required]
         public decimal HourlyWage { get; set; }
     }
 
