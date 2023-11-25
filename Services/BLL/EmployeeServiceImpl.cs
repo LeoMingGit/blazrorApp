@@ -14,10 +14,10 @@ namespace Services.BLL
 
         public void sayHello()
         {
-            using (var db = DbProvider.GetSugarDbContext("blazorApp"))
+            using (var db = DbProvider.GetSugarDbContext("WorkSchedule"))
             {
 
-                var list =db.Queryable<Employee>().ToList();    
+                var list =db.Queryable<Employees>().ToList();    
 
 
                 Console.WriteLine("hello");
