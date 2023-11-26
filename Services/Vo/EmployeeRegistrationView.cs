@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BlazorApp.Data
+namespace Services.Vo
 {
     /// <summary>
     /// 
@@ -13,26 +13,8 @@ namespace BlazorApp.Data
 
             EmployeeSkills =new List<EmployeeSkillView> { };
 
-            MockData();
         }   
-
-        public  void MockData()
-        {
-            for (int i = 1; i <= 100; i++)
-            {
-                EmployeeSkills.Add(new EmployeeSkillView
-                {
-                    SelectedSkill = false,
-                    SkillID = i,
-                    Level = i % 3 + 1,  
-                    LevelName = $"Level {i}",
-                    YearsOfExperience = i % 2 == 0 ? (int?)i : null,   
-                    HourlyWage = 10.5m + i * 2.0m  
-                });
-            }
-
-        }
-
+ 
         /// <summary>
         /// 
         /// </summary>

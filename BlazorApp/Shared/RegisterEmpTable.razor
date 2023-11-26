@@ -15,9 +15,11 @@
     <PropertyColumn Title="Skill" Property="c=>c.Skill" Width="150" Align="@columnAlign" />
     <PropertyColumn Title="Level" Property="c=>c.Level" Width="350" Align="@columnAlign">
         <RadioGroup @bind-Value="@context.Level">
-            <Radio Value="1">Novice</Radio>
-            <Radio Value="2">Proficient</Radio>
-            <Radio Value="3">Expert</Radio>
+          @foreach (var level in Enum.GetValues(typeof(Constants.SkillLevel)))
+        {
+                var levelConst = (int)level;
+                <Radio Value="levelConst">@level.ToString()</Radio>
+        }
         </RadioGroup>
     </PropertyColumn>
     <PropertyColumn Title="YOE" Property="c=>c.YearsOfExperience" Align="@columnAlign">
@@ -38,7 +40,8 @@
 
 
 @using System.Text.Json;
-@using BlazorApp.Data;
+@using Services.Common;
+@using Services.Vo;
 @code {
 
     [Parameter]
@@ -50,7 +53,7 @@
 
     public int PageIndex { get; set; } = 1;
 
-    public int PageSize { get; set; } = 10;
+    public int PageSize { get; set; } = 20;
 
     public int Total { get; set; }
 

@@ -2,8 +2,11 @@
 @using System.ComponentModel.DataAnnotations;
 @using System.Text.Json;
 @using BlazorApp.Data;
+@using Services.BLL;
 @using Utilities;
+@using Services.Vo;
 @inject IMessageService _message
+@inject IServiceProvider ServiceProvider
 <Form @ref="form"
       Model="@model"
       OnFinish="OnFinish"
@@ -34,7 +37,7 @@
         </GridCol>
     </GridRow>
 </Form>
-<RegisterEmpTable @ref="myComponent" skillList="model.EmployeeSkills"></RegisterEmpTable>
+<RegisterEmpTable @ref="myComponent"  skillList="model.EmployeeSkills"></RegisterEmpTable>
  
 
 @code
@@ -48,6 +51,18 @@
 
 
     private EmployeeRegistrationView saveData = new EmployeeRegistrationView();
+
+
+
+    private IEmployeeService employeeService;
+
+    protected override void OnInitialized()
+    {
+        employeeService = ServiceProvider.GetRequiredService<IEmployeeService>();
+
+        model.EmployeeSkills = employeeService.GetAllSkillList();
+
+    }
 
 
     private void Reset(MouseEventArgs args)

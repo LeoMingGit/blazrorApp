@@ -13,10 +13,12 @@ namespace Services.Models
     public class Skills
     {
         [SugarColumn(IsPrimaryKey = true, IsIdentity = true)]
-        public int SiID { get; set; }
+        public int SkillID { get; set; }
 
         public string Description { get; set; }
-
-        public string RequiresTicket { get; set; }
+        /// <summary>
+        /// True if some kind of Journeyman or other certification is required for this skill
+        /// </summary>
+        public bool RequiresTicket { get; set; }
     }
 }

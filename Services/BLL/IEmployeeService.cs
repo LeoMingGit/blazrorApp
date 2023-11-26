@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Services.Vo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,8 +10,9 @@ namespace Services.BLL
     public interface IEmployeeService
     {
 
-        public void sayHello();
-     
-        
+        public List<EmployeeSkillView> GetAllSkillList();
+
+
+
     }
 }
