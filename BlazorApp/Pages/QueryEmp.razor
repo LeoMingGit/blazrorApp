@@ -32,35 +32,78 @@
         </GridCol>
     </GridRow>
 </Form>
-<QueryEmpTable skillList="list" ></QueryEmpTable>
-
+<QueryEmpTable skillList="list" PageIndex="PageIndex" PageSize="PageSize" Total="Total"
+               OnPageSizeChanged="HandlePageSizeChanged"></QueryEmpTable>
 
 @code
 {
 
-    private QueryEmployeeDto model = new QueryEmployeeDto();
+    private QueryEmployeeAndSkillsDto model = new QueryEmployeeAndSkillsDto();
 
-    private Form<QueryEmployeeDto> form;
+    private Form<QueryEmployeeAndSkillsDto> form;
 
-    private List<QueryEmployeeVo> list = new List<QueryEmployeeVo>();
+    private List<EmployeeInfoAndSillInfoListItem> list = new List<EmployeeInfoAndSillInfoListItem>();
 
-    private EmployeeRegistrationView saveData = new EmployeeRegistrationView();
+    private QueryEmployeeAndSkillsDto queryDto = new QueryEmployeeAndSkillsDto();
+
+
+    public int PageIndex { get; set; } = 1;
+
+
+    public int PageSize { get; set; } = 20;
+
+    public int Total { get; set; } = 0;
+
 
     private IEmployeeService employeeService;
 
     protected override void OnInitialized()
     {
         employeeService = ServiceProvider.GetRequiredService<IEmployeeService>();
+        queryDto.PageIndex = 1;
+        queryDto.PageSize = 20; 
+
     }
+
+    public void HandlePageSizeChanged((int _pageIndex, int _pageSize) values)
+    {
+        queryDto.PageIndex = values._pageIndex;
+        queryDto.PageSize = values._pageSize;
+        PageIndex = values._pageIndex;
+        PageSize = values._pageSize;
+        var queryRes = employeeService.QueryEmployeeAndSkillInfoList(queryDto);
+        if (queryRes != null && queryRes.Result.Count >= 0)
+        {
+            list = queryRes.Result;
+            Total = queryRes.TotalNum;
+        }
+    }
+
 
     private void Reset(MouseEventArgs args)
     {
         form.Reset();
+        queryDto.HomePhone = string.Empty;
+        PageIndex = 1;
+        var queryRes = employeeService.QueryEmployeeAndSkillInfoList(queryDto);
+        if (queryRes != null && queryRes.Result.Count >= 0)
+        {
+            list = queryRes.Result;
+            Total = queryRes.TotalNum;
+        }
     }
     private async void OnFinish(EditContext editContext)
     {
+        var tmpObj = editContext.Model as QueryEmployeeAndSkillsDto;
+        queryDto.HomePhone = tmpObj?.HomePhone;
+        PageIndex = 1;
+        var queryRes = employeeService.QueryEmployeeAndSkillInfoList(queryDto);
+        if (queryRes != null && queryRes.Result.Count >= 0)
+        {
+            list = queryRes.Result;
+            Total = queryRes.TotalNum;
+        }
 
- 
     }
 
     private void OnFinishFailed(EditContext editContext)

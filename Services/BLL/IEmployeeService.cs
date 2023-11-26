@@ -1,4 +1,6 @@
-﻿using Services.Vo;
+﻿using Services.Common;
+using Services.Dto;
+using Services.Vo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +16,7 @@ namespace Services.BLL
 
         public (bool success, string msg) SaveEmployeeAndSkills(EmployeeRegistrationView dto);
 
+        public PagedInfo<EmployeeInfoAndSillInfoListItem> QueryEmployeeAndSkillInfoList(QueryEmployeeAndSkillsDto dto);
 
     }
 }
