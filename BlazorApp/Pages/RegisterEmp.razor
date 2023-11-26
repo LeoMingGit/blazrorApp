@@ -78,14 +78,43 @@
             await _message.Warning("Please Select Verified Skills");
             return;
         }
+
+        // The years of experience (YOE) and hourly wage must both be greater than zero.
+        var errMsg = string.Empty;
+        for (int i = 0; i < selectedData.Count; i++)
+        {
+            var item = selectedData[i];
+            if(item.YearsOfExperience <=0 || item.HourlyWage <=0)
+            {
+                var skillName = item.Skill;
+                errMsg = $"For the skill '{skillName}', both the years of experience (YOE) and hourly wage must be greater than zero.";
+                break; // Exit the loop after the first invalid entry
+            }
+        }
+
+        if (false == string.IsNullOrEmpty(errMsg))
+        {
+            await _message.Warning(errMsg);
+            return;
+        }
+
         var tempData = editContext.Model as EmployeeRegistrationView;
         saveData = CommonHelper.DeepCopy<EmployeeRegistrationView>(tempData);
-        var tmepSelectedData = CommonHelper.DeepCopy<List<EmployeeSkillView>>(tempData.EmployeeSkills);
+        var tmepSelectedData = CommonHelper.DeepCopy<List<EmployeeSkillView>>(selectedData);
         saveData.EmployeeSkills = tmepSelectedData;
 
- 
-        Console.WriteLine($"Success:{JsonSerializer.Serialize(model)}");
-    }
+        (bool success, string msg) result = employeeService.SaveEmployeeAndSkills(saveData);
+        if (result.success)
+        {
+            await _message.Success(result.msg);
+        }
+        else
+        {
+            await _message.Error(result.msg);
+        }
+
+
+     }
 
     private void OnFinishFailed(EditContext editContext)
     {

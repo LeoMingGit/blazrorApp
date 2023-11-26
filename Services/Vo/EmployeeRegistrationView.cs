@@ -8,13 +8,7 @@ namespace Services.Vo
     public class EmployeeRegistrationView
     {
 
-        public EmployeeRegistrationView() {
-
-
-            EmployeeSkills =new List<EmployeeSkillView> { };
-
-        }   
- 
+   
         /// <summary>
         /// 
         /// </summary>
@@ -31,6 +25,7 @@ namespace Services.Vo
         /// 
         /// </summary>
         [Required]
+        [RegularExpression(@"^[1-9][0-9][0-9]\.[0-9][0-9][0-9]\.[0-9][0-9][0-9][0-9]$", ErrorMessage = "Home Phone not valid.")]
         public string HomePhone { get; set; } = string.Empty;
         /// <summary>
         /// 

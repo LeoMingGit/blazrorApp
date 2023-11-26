@@ -31,7 +31,7 @@ namespace Services.Vo
         /// <summary>
         /// /
         /// </summary>
-         public int? YearsOfExperience { get; set; }
+         public int YearsOfExperience { get; set; }
 
         /// <summary>
         /// 

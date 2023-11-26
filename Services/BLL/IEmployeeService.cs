@@ -12,6 +12,7 @@ namespace Services.BLL
 
         public List<EmployeeSkillView> GetAllSkillList();
 
+        public (bool success, string msg) SaveEmployeeAndSkills(EmployeeRegistrationView dto);
 
 
     }

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Schema;
 
 namespace Services.BLL
 {
@@ -14,7 +15,10 @@ namespace Services.BLL
     {
 
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public List<EmployeeSkillView>  GetAllSkillList()
         {
 
@@ -41,7 +45,6 @@ namespace Services.BLL
                     }
                     return resList;
                 }
-
             }
 			catch (Exception ex)
 			{
@@ -51,7 +54,73 @@ namespace Services.BLL
 
 
         }
- 
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dto"></param>
+        /// <returns></returns>
+        public (bool success, string msg) SaveEmployeeAndSkills(EmployeeRegistrationView dto)
+        {
+            using (var db = DbProvider.GetSugarDbContext("WorkSchedule"))
+            {
+
+                try
+                {
+                    var targetEmployee=db.Queryable<Employees>().Where(x => x.HomePhone == dto.HomePhone).ToList().FirstOrDefault();
+
+                    var employeeId = -1;
+
+                    db.BeginTran();
+
+                  
+                    if(targetEmployee != null)
+                    {
+                       var updateCnt= db.Updateable<Employees>(targetEmployee).ExecuteCommand();
+                        employeeId = targetEmployee.EmployeeId;
+                    }
+                    else
+                    {
+                        var saveEmployeeData=new Employees();
+                        saveEmployeeData.HomePhone = dto.HomePhone;
+                        saveEmployeeData.FirstName = dto.FirstName;
+                        saveEmployeeData.LastName = dto.LastName;
+                        employeeId = db.Insertable(saveEmployeeData).ExecuteReturnIdentity();
+                    }
+
+                    var batchDeleteCnt =db.Deleteable<EmployeeSkills>().Where(x=>x.EmployeeID==employeeId).ExecuteCommand();
+
+                    var  empSkillSaveList =new List<EmployeeSkills>();
+
+                    foreach (var empSkillItem in dto.EmployeeSkills)
+                    {
+
+                        empSkillSaveList.Add(new EmployeeSkills() { 
+                            EmployeeID =employeeId,
+                            HourlyWage  = empSkillItem.HourlyWage,
+                            YearsOfExperience =empSkillItem.YearsOfExperience,
+                            Level = empSkillItem.Level,
+                            SkillID = empSkillItem.SkillID, 
+                        });
+                    }
+
+                    var batchInsertCnt = db.Insertable<EmployeeSkills>(empSkillSaveList).ExecuteCommand();
+
+                    db.CommitTran();
+
+                    return (true, "success");
+                }
+                catch (Exception ex)
+                {
+                    db.RollbackTran();
+                    return (false, ex.Message);
+                }
+
+            }
+        }
+
 
 
     }
