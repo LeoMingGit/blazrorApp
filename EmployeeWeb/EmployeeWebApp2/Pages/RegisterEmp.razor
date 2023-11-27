@@ -1,0 +1,124 @@
+﻿@page "/registerEmp"
+@using System.ComponentModel.DataAnnotations;
+@using System.Text.Json;
+@using BlazorApp.Data;
+@using Services.BLL;
+@using Utilities;
+@using Services.Vo;
+@inject IMessageService _message
+@inject IServiceProvider ServiceProvider
+<Form @ref="form"
+      Model="@model"
+      OnFinish="OnFinish"
+      OnFinishFailed="OnFinishFailed"
+      LabelColSpan="8"
+      WrapperColSpan="16">
+    <GridRow>
+        <GridCol Span="12">
+            <FormItem Label="First Name">
+                <Input @bind-Value="@context.FirstName" />
+            </FormItem>
+            <FormItem Label="Last Name">
+                <Input @bind-Value="@context.LastName" />
+            </FormItem>
+            <FormItem Label="Home Phone">
+                <Input @bind-Value="@context.HomePhone" />
+            </FormItem>
+        </GridCol>
+        <GridCol Span="12">
+            <FormItem WrapperColOffset="4" WrapperColSpan="16">
+                <Button Type="@ButtonType.Primary" HtmlType="submit">
+                    Register
+                </Button>
+                <Button OnClick="Reset">
+                    Clear
+                </Button>
+            </FormItem>
+        </GridCol>
+    </GridRow>
+</Form>
+<RegisterEmpTable @ref="myComponent"  skillList="model.EmployeeSkills"></RegisterEmpTable>
+ 
+
+@code
+{
+    RegisterEmpTable myComponent;
+
+    private EmployeeRegistrationView model = new EmployeeRegistrationView();
+
+
+    private Form<EmployeeRegistrationView>  form;
+
+
+    private EmployeeRegistrationView saveData = new EmployeeRegistrationView();
+
+
+
+    [Inject] protected EmployeeService employeeService { get; set; }
+
+    protected override void OnInitialized()
+    {
+ 
+        model.EmployeeSkills = employeeService.GetAllSkillList();
+
+    }
+
+
+    private void Reset(MouseEventArgs args)
+    {
+        form.Reset();
+    }
+    private async void OnFinish(EditContext editContext)
+    {
+        var selectedData = myComponent.selectedRows?.ToList();
+
+        if (selectedData==null || selectedData.Count() == 0)
+        {
+            await _message.Warning("Please Select Verified Skills");
+            return;
+        }
+
+        // The years of experience (YOE) and hourly wage must both be greater than zero.
+        var errMsg = string.Empty;
+        for (int i = 0; i < selectedData.Count; i++)
+        {
+            var item = selectedData[i];
+            if(item.YearsOfExperience <=0 || item.HourlyWage <=0)
+            {
+                var skillName = item.Skill;
+                errMsg = $"For the skill '{skillName}', both the years of experience (YOE) and hourly wage must be greater than zero.";
+                break; // Exit the loop after the first invalid entry
+            }
+        }
+
+        if (false == string.IsNullOrEmpty(errMsg))
+        {
+            await _message.Warning(errMsg);
+            return;
+        }
+
+        var tempData = editContext.Model as EmployeeRegistrationView;
+        saveData = CommonHelper.DeepCopy<EmployeeRegistrationView>(tempData);
+        var tmepSelectedData = CommonHelper.DeepCopy<List<EmployeeSkillView>>(selectedData);
+        saveData.EmployeeSkills = tmepSelectedData;
+
+        (bool success, string msg) result = employeeService.SaveEmployeeAndSkills(saveData);
+        if (result.success)
+        {
+            await _message.Success(result.msg);
+        }
+        else
+        {
+            await _message.Error(result.msg);
+        }
+
+
+     }
+
+    private void OnFinishFailed(EditContext editContext)
+    {
+        Console.WriteLine($"Failed:{JsonSerializer.Serialize(model)}");
+    }
+ 
+    
+}

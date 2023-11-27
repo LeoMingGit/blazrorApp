@@ -1,0 +1,113 @@
+﻿@page "/queryEmp"
+@using System.ComponentModel.DataAnnotations;
+@using System.Text.Json;
+@using EmployeeWebApp.Data;
+@using Services.Vo;
+@using Services.BLL;
+@using Utilities;
+@using EmployeeSystem.ViewModels;
+@inject IMessageService _message
+@inject IServiceProvider ServiceProvider
+<Form @ref="form"
+      Model="@model"
+      OnFinish="OnFinish"
+      OnFinishFailed="OnFinishFailed"
+      LabelColSpan="8"
+      WrapperColSpan="16">
+    <GridRow>
+        <GridCol Span="12">
+            <FormItem Label="Home Phone">
+                <Input @bind-Value="@context.HomePhone" />
+            </FormItem>
+        </GridCol>
+        <GridCol Span="12">
+            <FormItem WrapperColOffset="4" WrapperColSpan="16">
+                <Button Type="@ButtonType.Primary" HtmlType="submit">
+                    Query
+                </Button>
+                <Button OnClick="Reset">
+                    Clear
+                </Button>
+            </FormItem>
+        </GridCol>
+    </GridRow>
+</Form>
+<QueryEmpTable skillList="list" PageIndex="PageIndex" PageSize="PageSize" Total="Total"
+               OnPageSizeChanged="HandlePageSizeChanged"></QueryEmpTable>
+
+@code
+{
+
+    private QueryEmployeeAndSkillsDto model = new QueryEmployeeAndSkillsDto();
+
+    private Form<QueryEmployeeAndSkillsDto> form;
+
+    private List<EmployeeInfoAndSillInfoListItem> list = new List<EmployeeInfoAndSillInfoListItem>();
+
+    private QueryEmployeeAndSkillsDto queryDto = new QueryEmployeeAndSkillsDto();
+
+
+    public int PageIndex { get; set; } = 1;
+
+
+    public int PageSize { get; set; } = 20;
+
+    public int Total { get; set; } = 0;
+
+
+    [Inject] protected EmployeeService employeeService { get; set; }
+
+    protected override void OnInitialized()
+    {        queryDto.PageIndex = 1;
+        queryDto.PageSize = 20; 
+
+    }
+
+    public void HandlePageSizeChanged((int _pageIndex, int _pageSize) values)
+    {
+        queryDto.PageIndex = values._pageIndex;
+        queryDto.PageSize = values._pageSize;
+        PageIndex = values._pageIndex;
+        PageSize = values._pageSize;
+        var queryRes = employeeService.QueryEmployeeAndSkillInfoList(queryDto);
+        if (queryRes != null && queryRes.Result.Count >= 0)
+        {
+            list = queryRes.Result;
+            Total = queryRes.TotalNum;
+        }
+    }
+
+
+    private void Reset(MouseEventArgs args)
+    {
+        form.Reset();
+        queryDto.HomePhone = string.Empty;
+        PageIndex = 1;
+        var queryRes = employeeService.QueryEmployeeAndSkillInfoList(queryDto);
+        if (queryRes != null && queryRes.Result.Count >= 0)
+        {
+            list = queryRes.Result;
+            Total = queryRes.TotalNum;
+        }
+    }
+    private async void OnFinish(EditContext editContext)
+    {
+        var tmpObj = editContext.Model as QueryEmployeeAndSkillsDto;
+        queryDto.HomePhone = tmpObj?.HomePhone;
+        PageIndex = 1;
+        var queryRes = employeeService.QueryEmployeeAndSkillInfoList(queryDto);
+        if (queryRes != null && queryRes.Result.Count >= 0)
+        {
+            list = queryRes.Result;
+            Total = queryRes.TotalNum;
+        }
+
+    }
+
+    private void OnFinishFailed(EditContext editContext)
+    {
+        Console.WriteLine($"Failed:{JsonSerializer.Serialize(model)}");
+    }
+
+
+}

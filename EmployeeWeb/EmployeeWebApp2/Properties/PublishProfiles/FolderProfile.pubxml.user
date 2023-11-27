@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>E:\代码练习\blazor-2023-11-25\BlazorApp\bin\Release\net6.0\publish\</_PublishTargetUrl>
+    <History>True|2023-11-26T09:47:38.3126669Z;True|2023-11-26T16:34:47.1737463+08:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include=".dockerignore">
+      <publishTime>11/24/2023 20:57:03</publishTime>
+    </File>
+    <File Include="Dockerfile">
+      <publishTime>11/26/2023 17:19:35</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

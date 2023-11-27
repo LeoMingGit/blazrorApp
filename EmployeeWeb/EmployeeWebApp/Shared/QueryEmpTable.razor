@@ -1,0 +1,66 @@
+﻿@using System.ComponentModel
+@using AntDesign.TableModels
+
+<Table @ref="table"
+       TItem="EmployeeInfoAndSillInfoListItem"
+       DataSource="@skillList"
+       Total="@Total"
+       PageIndex="@PageIndex"
+       PageSize="@PageSize"
+       OnChange="OnChange"
+       Size="TableSize.Small"
+       RowKey="x=>x.SkillID">
+    <PropertyColumn Title="First Name" Property="c=>c.FirstName" Width="150" Align="@columnAlign" />
+    <PropertyColumn Title="Last Name" Property="c=>c.LastName" Width="150" Align="@columnAlign" />
+    <PropertyColumn Title="Home Phone" Property="c=>c.HomePhone" Width="150" Align="@columnAlign" />
+    <PropertyColumn Title="Skill" Property="c=>c.Skill" Width="150" Align="@columnAlign" />
+    <PropertyColumn Title="Level" Property="c=>c.LevelName" Width="150" Align="@columnAlign" />
+    <PropertyColumn Title="YOE" Property="c=>c.YearsOfExperience" Width="100" Align="@columnAlign" />
+    <PropertyColumn Title="Hourly Wage" Property="c=>c.HourlyWage" Width="100" Align="@columnAlign" />
+</Table>
+<p>PageIndex: @PageIndex | PageSize: @PageSize | Total: @Total</p>
+
+
+
+@using System.Text.Json;
+@using EmployeeWebApp.Data;
+@using Services.Vo;
+@code {
+
+    [Parameter]
+    public List<EmployeeInfoAndSillInfoListItem> skillList { get; set; }
+
+    [Parameter]
+
+    public int PageIndex { get; set; } = 1;
+
+    [Parameter]
+
+    public int PageSize { get; set; } = 20;
+
+    [Parameter]
+    public int Total { get; set; }
+
+    [Parameter]
+    public EventCallback<(int _pageIndex, int _pageSize)> OnPageSizeChanged { get; set; }
+
+    ColumnAlign columnAlign = ColumnAlign.Left;
+
+
+    ITable table;
+
+    protected override async Task OnInitializedAsync()
+    {
+
+
+    }
+    public async Task OnChange(QueryModel<EmployeeInfoAndSillInfoListItem> queryModel)
+    {
+
+        await OnPageSizeChanged.InvokeAsync((queryModel.PageIndex, queryModel.PageSize));
+
+    }
+
+
+
+}
