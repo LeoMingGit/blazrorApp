@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "H0NJwgTLsmd86UzTX8+wtKrkB88IOHCN8GYNrJ6T0MV2CrE8f6oYHDW+sj/OSzIyyc2sKKZE4b3HThLexn535A==",
+  "dgSpecHash": "zFuEH5VGsZIFzd4uO/S5KI+o6FS/yyNog0zY5sRkMPsDwkA3dHMfyr5GpyRxh49EfMyUHU8Kvpm9su0l4LyFww==",
   "success": true,
-  "projectFilePath": "E:\\代码练习\\EmployeeWeb\\Utilities\\Utilities.csproj",
+  "projectFilePath": "E:\\代码练习\\blazorApp\\EmployeeWeb\\Utilities\\Utilities.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

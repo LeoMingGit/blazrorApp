@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\代码练习\\EmployeeWeb\\Utilities\\Utilities.csproj": {}
+    "E:\\代码练习\\blazorApp\\EmployeeWeb\\Utilities\\Utilities.csproj": {}
   },
   "projects": {
-    "E:\\代码练习\\EmployeeWeb\\Utilities\\Utilities.csproj": {
+    "E:\\代码练习\\blazorApp\\EmployeeWeb\\Utilities\\Utilities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\代码练习\\EmployeeWeb\\Utilities\\Utilities.csproj",
+        "projectUniqueName": "E:\\代码练习\\blazorApp\\EmployeeWeb\\Utilities\\Utilities.csproj",
         "projectName": "Utilities",
-        "projectPath": "E:\\代码练习\\EmployeeWeb\\Utilities\\Utilities.csproj",
+        "projectPath": "E:\\代码练习\\blazorApp\\EmployeeWeb\\Utilities\\Utilities.csproj",
         "packagesPath": "C:\\Users\\李响\\.nuget\\packages\\",
-        "outputPath": "E:\\代码练习\\EmployeeWeb\\Utilities\\obj\\",
+        "outputPath": "E:\\代码练习\\blazorApp\\EmployeeWeb\\Utilities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\李响\\AppData\\Roaming\\NuGet\\NuGet.Config",
