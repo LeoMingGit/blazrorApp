@@ -4,8 +4,13 @@
 @using EmployeeSystem.BLL;
 @using Utilities;
 @using EmployeeSystem.ViewModels;
-@inject IMessageService _message
-@inject IServiceProvider ServiceProvider
+@inject IMessageService _message;
+@inject INotificationService _notice
+
+@inject IServiceProvider ServiceProvider;
+<AntContainer>
+</AntContainer>
+
 <Form @ref="form"
       Model="@model"
       OnFinish="OnFinish"
@@ -38,9 +43,10 @@
 </Form>
 <RegisterEmpTable @ref="myComponent" skillList="model.EmployeeSkills"></RegisterEmpTable>
 
-
 @code
 {
+
+
     RegisterEmpTable myComponent;
 
     private EmployeeRegistrationView model = new EmployeeRegistrationView();
@@ -54,6 +60,9 @@
 
 
     [Inject] protected EmployeeService employeeService { get; set; }
+
+
+
 
     protected override void OnInitialized()
     {
@@ -116,6 +125,7 @@
 
     private void OnFinishFailed(EditContext editContext)
     {
+             
         Console.WriteLine($"Failed:{JsonSerializer.Serialize(model)}");
     }
 

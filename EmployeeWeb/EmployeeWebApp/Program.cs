@@ -18,13 +18,13 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 //  :added
 //  code retrieves the HogWild connection string
 var connectionStringHogWild = builder.Configuration.GetConnectionString("WorkSchedule");
-
+ 
 builder.Services.AddBackendDependencies(options =>
     options.UseSqlServer(connectionStringHogWild));
 
 builder.Services.AddDbContext<EmployeeContext>(options =>
     options.UseSqlServer(connectionString));
-
+ 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();

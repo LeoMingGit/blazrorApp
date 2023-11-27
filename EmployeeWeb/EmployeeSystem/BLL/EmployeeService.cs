@@ -75,11 +75,10 @@ namespace EmployeeSystem.BLL
 
         public (bool success, string msg) SaveEmployeeAndSkills(EmployeeRegistrationView dto)
         {
-            using (var transaction = _empContext.Database.BeginTransaction())
-            {
+             {
                 try
                 {
-                    var targetEmployee = _empContext.Employees.SingleOrDefault(x => x.HomePhone == dto.HomePhone);
+                    var targetEmployee = _empContext.Employees.FirstOrDefault(x => x.HomePhone == dto.HomePhone);
 
                     var employeeId = -1;
 
@@ -121,14 +120,12 @@ namespace EmployeeSystem.BLL
                     _empContext.EmployeeSkills.AddRange(empSkillSaveList);
 
                     _empContext.SaveChanges();
-                    transaction.Commit();
-
+ 
                     return (true, "success");
                 }
                 catch (Exception ex)
                 {
-                    transaction.Rollback();
-                    return (false, ex.Message);
+                     return (false, ex.Message);
                 }
             }
         }
