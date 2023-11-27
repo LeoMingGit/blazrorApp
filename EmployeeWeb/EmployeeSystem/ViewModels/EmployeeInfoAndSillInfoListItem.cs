@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Services.Vo
+namespace EmployeeSystem.ViewModels
 {
     public class EmployeeInfoAndSillInfoListItem
     {

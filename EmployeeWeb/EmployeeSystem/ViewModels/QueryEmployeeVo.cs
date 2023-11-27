@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Services.Vo
+namespace EmployeeSystem.ViewModels
 {
     public class QueryEmployeeVo
     {

@@ -2,11 +2,10 @@ using EmployeeWebApp.Data;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.EntityFrameworkCore;
-using Services.BLL;
-using Services.Common;
-using Services.DAL;
-using Services;
-using EmployeeWebApp.Data;
+using EmployeeSystem.BLL;
+using EmployeeSystem.Paginator;
+using  EmployeeSystem.DAL;
+using EmployeeSystem;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.

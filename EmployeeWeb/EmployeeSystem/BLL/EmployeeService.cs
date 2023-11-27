@@ -1,9 +1,8 @@
 ﻿using EmployeeSystem.ViewModels;
 using Microsoft.EntityFrameworkCore;
-using Services.Common;
-using Services.DAL;
-using Services.Models;
-using Services.Vo;
+using EmployeeSystem.Paginator;
+using EmployeeSystem.DAL;
+using EmployeeSystem.Entities;
 using System;
 using System.Collections.Generic;
 using System.Drawing.Imaging;
@@ -11,9 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
-using static Services.Common.Constants;
+using static EmployeeSystem.Paginator.Constants;
 
-namespace Services.BLL
+namespace EmployeeSystem.BLL
 {
     public class EmployeeService
     {

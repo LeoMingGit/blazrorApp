@@ -7,7 +7,7 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Services.Models
+namespace EmployeeSystem.Entities
 {
 
     [Table("Skills")]

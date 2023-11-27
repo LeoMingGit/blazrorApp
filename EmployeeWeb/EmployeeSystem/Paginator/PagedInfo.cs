@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Services.Common
-{
+namespace EmployeeSystem.Paginator { 
     /// <summary>
     /// 分页参数
     /// </summary>
