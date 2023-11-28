@@ -2,9 +2,7 @@
 
 #### 介绍
 blazorApp
-blazorApp
-blazorApp
-blazorApp
+
 
 #### 软件架构
 软件架构说明
